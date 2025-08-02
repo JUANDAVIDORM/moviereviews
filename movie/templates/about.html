@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About</title>
-</head>
-<body>
-    <h1>This is the About Page</h1>
-    <p>Made by David Ortiz Moncada</p>
-</body>
-</html>
+{% extends 'main.html' %}
+{% block title %}Acerca de{% endblock %}
+{% block content %}
+
+<h2>Acerca de esta app</h2>
+<p>Creado por <strong>David Ortiz Moncada</strong></p>
+<p>Este sitio permite buscar y ver reseñas de películas.</p>
+
+<a href="{% url 'home' %}" class="btn btn-primary mt-3">Volver al inicio</a>
+
+{% endblock %}

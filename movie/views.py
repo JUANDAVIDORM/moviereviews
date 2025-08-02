@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from .models import Movie
 
 def home(request):
-    context = {'name': 'David Ortiz Moncada'}  # Diccionario con el parámetro
-    return render(request, 'home.html', context)
+    searchTerm = request.GET.get('searchMovie')
+    if searchTerm:
+        movies = Movie.objects.filter(title__icontains=searchTerm)
+    else:
+        movies = Movie.objects.all()
+    return render(request, 'home.html', {'name': 'David Ortiz Moncada', 'movies': movies})
 
 def about(request):
     return render(request, 'about.html')
