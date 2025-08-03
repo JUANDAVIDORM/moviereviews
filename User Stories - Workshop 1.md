@@ -1,4 +1,4 @@
-# 📋 User Stories - Workshop 1
+# User Stories - Workshop 1
 
 ## ✅ US1: View a personalized home page
 **As a** visitor,  
@@ -53,3 +53,4 @@
 **Acceptance Criteria:**
 - The `Movie` model must be registered in Django admin.
 - Basic CRUD operations must work properly from the admin panel.
+
