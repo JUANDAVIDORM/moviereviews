@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Mi sitio de películas{% endblock %}</title>
+    <title>{% block title %}Movie Reviews{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-4">
-        <h1 class="text-primary">Mi sitio de películas</h1>
-        <hr>
-        {% block content %}{% endblock %}
-        <hr>
-        <footer class="text-muted text-center">
-            <p>&copy; 2025 - David Ortiz Moncada</p>
-        </footer>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">MovieApp</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/">Admin</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
+
+<main class="container py-4">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="bg-dark text-white text-center py-3 mt-4">
+    &copy; {{ year|default:"2025" }} MovieApp. All rights reserved.
+</footer>
+
 </body>
 </html>
